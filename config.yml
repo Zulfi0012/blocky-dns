@@ -1,0 +1,31 @@
+upstream:
+  default:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+
+blocking:
+  blackLists:
+    ads:
+      - https://big.oisd.nl/domains
+      - https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/domains.txt
+      - https://hblock.molinero.dev/hosts_adblock.txt
+
+  whiteLists:
+    ads:
+      - https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
+
+  clientGroupsBlock:
+    default:
+      - ads
+
+  blockType: zeroIp
+  refreshPeriod: 24h
+
+ports:
+  dns: 53
+
+log:
+  level: error
+
+statistics:
+  enable: false
